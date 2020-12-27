@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #333;
+  color: #222;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  background-color: #fafafa;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: orange;
+  transition: transform 0.5s linear;
+}
+
+.circle.rotate {
+  transform: rotate(-70deg);
+}
+
+.circle__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.circle__btn:focus {
+  outline: none;
+}
+
+.circle__btn--open {
+  left: 60%;
+}
+
+.circle__btn--close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.content__header {
+  margin: 0;
+}
+
+.content_author {
+  color: #555;
+  font-style: italic;
+}
+
+.content__paragraph {
+  color: #333;
+  line-height: 1.5;
+}
+
+.menu-container {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 20;
+}
+
+.menu {
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+.menu__item {
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+.menu__item:nth-child(2) {
+  transform: translateX(-150%);
+  margin-left: 15px;
+}
+
+.menu__item:nth-child(3) {
+  transform: translateX(-200%);
+  margin-left: 30px;
+}
+
+.menu__item.show-nav {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.menu__icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
