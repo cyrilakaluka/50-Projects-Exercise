@@ -41,23 +41,27 @@ function getMovieElement(movie) {
   return movieElement;
 }
 
-function createMovieObject(movie) {
+function MovieObject(movie) {
   const { title, poster_path, vote_average, overview } = movie;
 
-  return {
-    title: title,
-    url: IMG_PATH + poster_path,
-    rating: vote_average,
-    overview: overview,
-  };
+  this.title = title;
+  this.overview = overview;
+  this.rating = vote_average;
+  this.url = !poster_path ? null : IMG_PATH + poster_path;
 }
+
+MovieObject.prototype.isNoNullProperty = function () {
+  return this.title && this.rating && this.overview && this.url;
+};
 
 function addMoviesToGrid(rawMoviesData) {
   moviesGrid.innerHTML = '';
 
   rawMoviesData.forEach((rawMovie) => {
-    const movie = createMovieObject(rawMovie);
-    moviesGrid.appendChild(getMovieElement(movie));
+    const movie = new MovieObject(rawMovie);
+    if (movie.isNoNullProperty()) {
+      moviesGrid.appendChild(getMovieElement(movie));
+    }
   });
 }
 
