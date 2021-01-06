@@ -11,7 +11,8 @@ remaining.innerText = '2L';
 
 smallCups.forEach((cup, index) => {
   cup.addEventListener('click', () => {
-    highlightCups(index);
+    let result = highlightCups(index);
+    updateBigCup(result);
   });
 });
 
@@ -34,7 +35,7 @@ function highlightCups(index) {
     });
   }
 
-  updateBigCup(index);
+  return index;
 }
 
 function updateBigCup(index) {

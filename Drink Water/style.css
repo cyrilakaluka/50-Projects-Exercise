@@ -49,7 +49,16 @@ p {
   margin: 30px 0;
 }
 
-.cup__remaining {
+.cup__section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s linear;
+}
+
+.cup__section--remaining {
   width: 100%;
   height: calc(100% - var(--fill-height));
   display: flex;
@@ -59,16 +68,9 @@ p {
   transition: 0.4s linear;
 }
 
-.cup__filled {
+.cup__section--filled {
   height: var(--fill-height);
-  width: 100%;
   background-color: var(--main-color-lighter);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0 0 37px 37px;
-  transition: 0.4s linear;
 }
 
 .cup__text {
