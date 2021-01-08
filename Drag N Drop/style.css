@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  /* overflow: hidden; */
+  background-color: rgb(47, 115, 194);
+}
+
+.drop-boxes {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.drop-boxes > :not(:last-child) {
+  margin-right: 20px;
+}
+
+.drop-box {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border: 5px #000 solid;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.drag-enter.drop-box {
+  background-color: #333;
+  border: 5px #fff dashed;
+}
+
+.drop-box__image {
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.drop-box__image.on-drag-hold {
+  border: 5px solid #ccc;
+}
