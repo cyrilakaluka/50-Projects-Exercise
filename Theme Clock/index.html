@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Clock Theme</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <button class="button" id="theme-switch">Dark mode</button>
+      <div class="clock-wrapper">
+        <div class="clock" id="analog-clock">
+          <div id="hour-hand" class="clock__hand clock__hand--hour"></div>
+          <div id="minute-hand" class="clock__hand clock__hand--minute"></div>
+          <div id="second-hand" class="clock__hand clock__hand--second"></div>
+        </div>
+      </div>
+      <div id="digital-clock" class="digi-clock"></div>
+      <div class="date" id="date">
+        <span class="date__day"></span>
+        <span class="date__month"></span>
+        <span class="date__day-digit">2</span>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

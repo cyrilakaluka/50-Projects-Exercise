@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:300&display=swap');
+
+:root {
+  --bg-theme-dark: #003366;
+  --bg-theme-light: #f4f4f4;
+  --color-grey: #8f8f8f;
+  --clock-frame-size: 250px;
+  --clock-hour-hand-width: 6px;
+  --clock-minute-hand-width: 3px;
+  --clock-second-hand-width: 3px;
+  --clock-hand-width: 3px;
+  --clock-hour-hand-height: 30%;
+  --clock-minute-hand-height: 50%;
+  --clock-second-hand-height: 60%;
+  --clock-second-hand-height-offset: 5%;
+  --center-clock-circle-width-inner: 12px;
+  --center-clock-circle-width-outer: 8px;
+  --color-clock-second-hand: orangered;
+  --transition-setting: 0.4s ease-in;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  margin: 0;
+  height: 100vh;
+  background-color: var(--bg-theme-light);
+  transition: background-color var(--transition-setting);
+  /* overflow: hidden; */
+}
+
+body[data-theme='dark'] {
+  background-color: var(--bg-theme-dark);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  background-color: var(--bg-theme-dark);
+  color: var(--bg-theme-light);
+  padding: 7px 10px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+[data-theme='dark'].button {
+  color: var(--bg-theme-dark);
+  background-color: var(--bg-theme-light);
+}
+
+.clock-wrapper {
+  margin-top: 150px;
+}
+
+.clock {
+  width: var(--clock-frame-size);
+  height: var(--clock-frame-size);
+  position: relative;
+}
+
+.clock::before,
+.clock::after {
+  content: '';
+  position: absolute;
+  bottom: calc(var(--clock-frame-size) / 2);
+  left: calc(var(--clock-frame-size) / 2);
+  transform: translate(-50%, 50%);
+  width: var(--center-clock-circle-width-inner);
+  height: var(--center-clock-circle-width-inner);
+  border-radius: 50%;
+  background-color: var(--color-clock-second-hand);
+  z-index: -1;
+}
+
+.clock::after {
+  width: var(--center-clock-circle-width-outer);
+  height: var(--center-clock-circle-width-outer);
+  background-color: var(--bg-theme-dark);
+  z-index: 1;
+}
+
+[data-theme='dark'].clock::after {
+  background-color: var(--bg-theme-light);
+}
+
+.clock__hand {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--clock-frame-size) / 2 - var(--clock-hand-width) / 2);
+  width: var(--clock-hand-width);
+  background-color: transparent;
+  transform-origin: center center;
+}
+
+.clock__hand::before {
+  content: '';
+  display: block;
+  width: 100%;
+  background-color: var(--bg-theme-dark);
+  border-radius: 50px;
+  position: absolute;
+}
+
+.clock__hand--hour {
+  width: var(--clock-hour-hand-width);
+  left: calc(var(--clock-frame-size) / 2 - var(--clock-hour-hand-width) / 2);
+}
+
+.clock__hand--hour::before {
+  height: var(--clock-hour-hand-height);
+  top: calc(50% - var(--clock-hour-hand-height));
+}
+
+.clock__hand--minute::before {
+  height: var(--clock-minute-hand-height);
+}
+
+.clock__hand--second {
+  z-index: 1;
+}
+
+.clock__hand--second::before {
+  height: var(--clock-second-hand-height);
+  top: calc(-1 * var(--clock-second-hand-height-offset));
+  background-color: var(--color-clock-second-hand);
+}
+
+[data-theme='dark'] .clock__hand--hour::before,
+[data-theme='dark'] .clock__hand--minute::before {
+  background-color: var(--bg-theme-light);
+}
+
+.digi-clock {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: var(--bg-theme-dark);
+}
+
+[data-theme='dark'].digi-clock {
+  color: var(--bg-theme-light);
+}
+
+.date {
+  color: var(--color-grey);
+  text-transform: uppercase;
+}
+
+.date__day::after {
+  content: ',';
+}
+
+.date__day-digit {
+  font-size: 14px;
+  color: var(--bg-theme-light);
+  border-radius: 50%;
+  background-color: var(--bg-theme-dark);
+  padding: 2px;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme='dark'] .date__day-digit {
+  color: var(--bg-theme-dark);
+  background-color: var(--bg-theme-light);
+}
