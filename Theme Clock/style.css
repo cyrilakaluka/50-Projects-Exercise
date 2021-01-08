@@ -43,6 +43,7 @@ body[data-theme='dark'] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 40vh;
 }
 
 .button {
@@ -53,6 +54,7 @@ body[data-theme='dark'] {
   border: none;
   cursor: pointer;
   transition: 0.2s ease;
+  margin-bottom: 50px;
 }
 
 .button:focus {
@@ -69,7 +71,7 @@ body[data-theme='dark'] {
 }
 
 .clock-wrapper {
-  margin-top: 150px;
+  margin-top: auto;
 }
 
 .clock {
@@ -152,7 +154,7 @@ body[data-theme='dark'] {
 }
 
 .digi-clock {
-  font-size: 4rem;
+  font-size: clamp(3.2rem, 10vw, 4rem);
   text-transform: uppercase;
   color: var(--bg-theme-dark);
 }
