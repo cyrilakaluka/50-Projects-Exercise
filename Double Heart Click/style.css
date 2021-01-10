@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.instruction {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.likes {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.image {
+  background-image: url('https://images.unsplash.com/photo-1610273313191-1e96cd072c2e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 300px 250px;
+  margin-top: 20px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.heart {
+  font-size: 1rem;
+  color: rgba(206, 30, 30, 0.8);
+  position: absolute;
+  transition: all 0.7s ease-in;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.heart.pop {
+  font-size: 10rem;
+  opacity: 0;
+}
