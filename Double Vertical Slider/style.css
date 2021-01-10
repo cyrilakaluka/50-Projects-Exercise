@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --content-percent-width: 30%;
+  --slides-timing-function: 0.4s ease-in;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.slide.below .slide__content {
+  transform: translateY(100%);
+}
+
+.slide.above .slide__content {
+  transform: translateY(-100%);
+}
+
+.slide.below .slide__image-wrapper {
+  transform: translateY(-100%);
+}
+
+.slide.above .slide__image-wrapper {
+  transform: translateY(100%);
+}
+
+.slide__content {
+  flex-basis: var(--content-percent-width);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f4f4f4;
+  transition: var(--slides-timing-function);
+}
+
+.slide__header {
+  font-size: 2.5rem;
+  margin: 0 0 15px;
+}
+
+.slide__extra-info {
+  text-transform: uppercase;
+}
+
+.slide__image-wrapper {
+  height: 100%;
+  flex: 1;
+  transition: var(--slides-timing-function);
+}
+
+.slide__image {
+  object-fit: cover;
+  height: 100%;
+}
+
+.slide:nth-child(1) .slide__content {
+  background-color: #207ca4;
+}
+
+.slide:nth-child(2) .slide__content {
+  background-color: #c15641;
+}
+
+.slide:nth-child(3) .slide__content {
+  background-color: #3d4048;
+}
+
+.slide:nth-child(4) .slide__content {
+  background-color: #9b5010;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: var(--content-percent-width);
+  font-size: 2rem;
+  color: #21218db2;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #21218d;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button-up {
+  transform: translateY(-50%);
+}
+
+.button-down {
+  transform: translate(-100%, 50%);
+}
