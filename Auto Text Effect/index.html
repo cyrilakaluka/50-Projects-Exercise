@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Auto Text Effect</title>
+  </head>
+  <body>
+    <div id="top-level" class="container active">
+      <div class="text-container">
+        <span id="text-holder" class="text-holder">We Love Programming!</span>
+        <span class="blinking-cursor">|</span>
+      </div>
+      <div class="inputs">
+        <div class="speed">
+          <label for="speed" class="speed__label">Speed:</label>
+          <input value="1" min="1" max="10" type="number" class="speed__input" id="speed" />
+        </div>
+        <div class="text">
+          <input
+            id="text"
+            maxlength="32"
+            placeholder="Enter characters, max: 32 characters..."
+            type="text"
+            class="text__input"
+          />
+        </div>
+        <div class="button-wrapper">
+          <button id="button" class="button"></button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
