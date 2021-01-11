@@ -45,10 +45,14 @@
           // Check for updates
           if (obj.playStatus === 'pause') {
             await new Promise(resolve => {
-              (function pollPlayStatus() {
-                setTimeout(() => {
-                  obj.playStatus === 'play' ? resolve() : pollPlayStatus();
-                }, 10);
+              (function checkPlayStatus() {
+                delay(10).then(() => {
+                  if (obj.playStatus === 'play') {
+                    resolve();
+                  } else {
+                    checkPlayStatus();
+                  }
+                });
               })();
             });
           }
