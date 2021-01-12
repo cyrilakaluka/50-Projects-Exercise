@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="pass" id="pass">
+        <h2 class="pass__header">Password Generator</h2>
+        <div class="pass__output">
+          <button class="pass__icon-btn" id="clipboard">
+            <i class="far fa-clipboard"></i>
+          </button>
+          <div id="password-output" class="pass__result"></div>
+        </div>
+        <div class="pass__options">
+          <div class="pass__option">
+            <label for="password-length" class="pass__label">Password Length</label>
+            <input id="password-length" max="32" min="5" type="number" value="20" class="pass__number" />
+          </div>
+          <div class="pass__option">
+            <label for="has-uppercase" class="pass__label">Include Uppercase Letters</label>
+            <input id="has-uppercase" type="checkbox" class="pass__checkbox" />
+          </div>
+          <div class="pass__option">
+            <label for="has-lowercase" class="pass__label">Include Lowercase </label>
+            <input id="has-lowercase" type="checkbox" class="pass__checkbox" />
+          </div>
+          <div class="pass__option">
+            <label for="has-numbers" class="pass__label">Include Numbers</label>
+            <input id="has-numbers" type="checkbox" class="pass__checkbox" />
+          </div>
+          <div class="pass__option">
+            <label for="has-symbols" class="pass__label">Include Symbols</label>
+            <input id="has-symbols" type="checkbox" class="pass__checkbox" />
+          </div>
+        </div>
+        <button class="pass__button" id="gen-pass">Generate Password</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
