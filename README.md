@@ -3,7 +3,7 @@ This repository consists of 50-project exercises compiled as a learning journey 
 The projects herein are a bit mixed in level of difficulty but in general should help hone my skills in HTML, CSS and JS.
 
 ## List of projects:
-40. 3D Background Boxes
+1. 3D Background Boxes
 1. Animated Navigatoin
 35. Animated Countdown
 2. Auto Text Effect
